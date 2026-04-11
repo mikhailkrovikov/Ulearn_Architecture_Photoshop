@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photoshop", "Photoshop.csproj", "{57C6ABD7-64AA-5574-D804-4997FA1CFE0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57C6ABD7-64AA-5574-D804-4997FA1CFE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C6ABD7-64AA-5574-D804-4997FA1CFE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C6ABD7-64AA-5574-D804-4997FA1CFE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C6ABD7-64AA-5574-D804-4997FA1CFE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10C6E97F-4FA7-4BA9-9CA8-AC70298CEF99}
+	EndGlobalSection
+EndGlobal
