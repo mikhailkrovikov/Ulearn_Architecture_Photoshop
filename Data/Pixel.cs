@@ -1,7 +1,14 @@
 namespace MyPhotoshop;
 
-public class Pixel
+public struct Pixel
 {
+    public Pixel(double r, double g, double b)
+    {
+        _r = r;
+        _g = g;
+        _b = b;
+    }
+
     private double _r;
     private double _g;
     private double _b;
