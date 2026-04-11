@@ -4,7 +4,9 @@ public class Photo
 {
     public readonly int Width;
     public readonly int Height;
-    public readonly Pixel[,] Data;
+    private readonly Pixel[,] Data;
+
+    public Pixel this[int x, int y] => Data[x, y];
 
     public Photo(int width, int height)
     {
