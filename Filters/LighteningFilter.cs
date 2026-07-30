@@ -36,3 +36,28 @@ public class LighteningFilter : IFilter
         return result;
     }
 }
+
+public class GrayscaleFilter : IFilter
+{
+    public ParameterInfo[] GetParameters()
+    {
+        return [];
+    }
+
+    public override string ToString()
+    {
+        return "Оттенки серого";
+    }
+
+    public Photo Process(Photo original, double[] parameters)
+    {
+        var result = new Photo(original.Width, original.Height);
+        for (var x = 0; x < result.Width; x++)
+            for (var y = 0; y < result.Height; y++)
+            {
+                var lightness = (original[x, y].R + original[x, y].G + original[x, y].B) / 3;
+                result[x, y] = new Pixel(lightness, lightness, lightness);
+            }
+        return result;
+    }
+}
