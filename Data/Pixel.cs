@@ -41,4 +41,9 @@ public struct Pixel
         if (value > 1) return 1;
         return value;
     }
+
+    public static Pixel operator *(Pixel pixel, double multiplier)
+    {
+        return new Pixel(Trim(pixel.R * multiplier), Trim(pixel.G * multiplier), Trim(pixel.B * multiplier));
+    }
 }
