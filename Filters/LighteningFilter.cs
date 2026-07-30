@@ -1,8 +1,8 @@
 namespace MyPhotoshop;
 
-public class LighteningFilter : IFilter
+public class LighteningFilter : PixelFilter
 {
-    public ParameterInfo[] GetParameters()
+    public override ParameterInfo[] GetParameters()
     {
         return new[]
         {
@@ -22,42 +22,8 @@ public class LighteningFilter : IFilter
         return "Осветление/затемнение";
     }
 
-    public Photo Process(Photo original, double[] parameters)
+    public override Pixel ProcessPixel(Pixel original, double[] parameters)
     {
-        var result = new Photo(original.Width, original.Height);
-        for (var x = 0; x < result.Width; x++)
-            for (var y = 0; y < result.Height; y++)
-            {
-                result[x, y] = new Pixel(
-                    Pixel.Trim(original[x, y].R * parameters[0]),
-                    Pixel.Trim(original[x, y].G * parameters[0]),
-                    Pixel.Trim(original[x, y].B * parameters[0]));
-            }
-        return result;
-    }
-}
-
-public class GrayscaleFilter : IFilter
-{
-    public ParameterInfo[] GetParameters()
-    {
-        return [];
-    }
-
-    public override string ToString()
-    {
-        return "Оттенки серого";
-    }
-
-    public Photo Process(Photo original, double[] parameters)
-    {
-        var result = new Photo(original.Width, original.Height);
-        for (var x = 0; x < result.Width; x++)
-            for (var y = 0; y < result.Height; y++)
-            {
-                var lightness = (original[x, y].R + original[x, y].G + original[x, y].B) / 3;
-                result[x, y] = new Pixel(lightness, lightness, lightness);
-            }
-        return result;
+        return original * parameters[0];
     }
 }
