@@ -5,7 +5,6 @@ namespace MyPhotoshop;
 public abstract class PixelFilter : ParametrizedFilter
 {
     protected PixelFilter(IParameters parameters) : base(parameters) { }
-    public abstract ParameterInfo[] GetParameters();
 
     public abstract Pixel ProcessPixel(Pixel original, IParameters parameters);
 

@@ -4,10 +4,7 @@ namespace MyPhotoshop;
 
 public class GrayscaleFilter : PixelFilter
 {
-    public GrayscaleFilter() : base(new EmptyParameters())
-    {
-        
-    }
+    public GrayscaleFilter() : base(new EmptyParameters()) { }
 
     public override string ToString()
     {

@@ -4,10 +4,7 @@ namespace MyPhotoshop;
 
 public class LighteningFilter : PixelFilter
 {
-    public LighteningFilter() : base(new LighteningParameters())
-    {
-        
-    }
+    public LighteningFilter() : base(new LighteningParameters()) { }
     public override string ToString()
     {
         return "Осветление/затемнение";
