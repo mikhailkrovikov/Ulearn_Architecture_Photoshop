@@ -1,12 +1,15 @@
+using MyPhotoshop.Filters;
+
 namespace MyPhotoshop;
 
-public abstract class PixelFilter : IFilter
+public abstract class PixelFilter : ParametrizedFilter
 {
+    protected PixelFilter(IParameters parameters) : base(parameters) { }
     public abstract ParameterInfo[] GetParameters();
 
-    public abstract Pixel ProcessPixel(Pixel original, double[] parameters);
+    public abstract Pixel ProcessPixel(Pixel original, IParameters parameters);
 
-    public Photo Process(Photo original, double[] parameters)
+    public override Photo Process(Photo original, IParameters parameters)
     {
         var result = new Photo(original.Width, original.Height);
         for (var x = 0; x < result.Width; x++)
