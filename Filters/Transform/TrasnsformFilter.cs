@@ -4,15 +4,13 @@ namespace MyPhotoshop.Filters.Transform
 {
     public class TrasnsformFilter<TParameters> : ParametrizedFilter<TParameters> where TParameters : IParameters, new()
     {
-        private readonly Func<Size, TParameters, Size> _transformSize;
-        private readonly Func<Point, Size, TParameters, Point?> _transformPoint;
+        private readonly ITransformer<TParameters> _transformer;
         private readonly string _name;
 
-        public TrasnsformFilter(string name, Func<Size, TParameters, Size> transformSize, Func<Point, Size, TParameters, Point?> transformPoint)
+        public TrasnsformFilter(string name, ITransformer<TParameters> transformer)
         {
             _name = name;
-            _transformSize = transformSize;
-            _transformPoint = transformPoint;
+            _transformer = transformer;
         }
 
         public override string ToString()
@@ -23,13 +21,13 @@ namespace MyPhotoshop.Filters.Transform
         public override Photo Process(Photo original, TParameters parameters)
         {
             var oldSize = new Size(original.Width, original.Height);
-            var newSize = _transformSize(oldSize, parameters);
-            var result = new Photo(newSize.Width, newSize.Height);
-            for (int x = 0; x < newSize.Width; x++)
-                for (int y = 0; y < newSize.Height; y++)
+            _transformer.Prepare(oldSize, parameters);
+            var result = new Photo(_transformer.ResultSize.Width, _transformer.ResultSize.Height);
+            for (int x = 0; x < result.Width; x++)
+                for (int y = 0; y < result.Height; y++)
                 {
                     var point = new Point(x, y);
-                    var oldPoint = _transformPoint(point, oldSize, parameters);
+                    var oldPoint = _transformer.MapPoint(point);
                     if (oldPoint.HasValue)
                         result[x, y] = original[oldPoint.Value.X, oldPoint.Value.Y];
                 }
