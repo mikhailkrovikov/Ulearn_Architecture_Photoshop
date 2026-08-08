@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace MyPhotoshop.Filters.Transform
+﻿namespace MyPhotoshop.Filters.Transform
 {
     public class RotationParameters : IParameters
     {
@@ -24,12 +22,5 @@ namespace MyPhotoshop.Filters.Transform
         {
             Angle = values[0];
         }
-    }
-
-    public interface ITransformer<TParameters> where TParameters : IParameters, new()
-    {
-        void Prepare(Size size, TParameters parameters);
-        Size ResultSize { get; }
-        Point? MapPoint(Point point);
     }
 }
