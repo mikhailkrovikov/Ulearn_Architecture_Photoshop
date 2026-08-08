@@ -41,17 +41,17 @@ public partial class App : Application
                 "Свободное вращение",
                 new RotateTransformer()));
 
-            //mainWindow.AddFilter(new TrasnsformFilter(
-            //    "Отразить по горизонтиали",
-            //    size => size,
-            //    (point, size) => new System.Drawing.Point(size.Width - point.X - 1, point.Y)
-            //    ));
+            mainWindow.AddFilter(new TrasnsformFilter(
+                "Отразить по горизонтиали",
+                size => size,
+                (point, size) => new System.Drawing.Point(size.Width - point.X - 1, point.Y)
+                ));
 
-            //mainWindow.AddFilter(new TrasnsformFilter(
-            //    "Против часовой",
-            //    size => new System.Drawing.Size(size.Height, size.Width),
-            //    (point, size) => new System.Drawing.Point(size.Width - point.Y - 1, point.X)
-            //    ));
+            mainWindow.AddFilter(new TrasnsformFilter(
+                "Против часовой",
+                size => new System.Drawing.Size(size.Height, size.Width),
+                (point, size) => new System.Drawing.Point(size.Width - point.Y - 1, point.X)
+                ));
 
             desktop.MainWindow = mainWindow;
         }
