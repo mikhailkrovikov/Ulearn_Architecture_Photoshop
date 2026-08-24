@@ -8,14 +8,14 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Filters\DemoFilter.cs"/>
+    <Compile Remove="Filters\DemoFilter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="9.0.9"/>
-    <PackageReference Include="Avalonia" Version="11.3.6"/>
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.6"/>
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.6"/>
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.6"/>
+    <PackageReference Include="System.Drawing.Common" Version="9.0.9" />
+    <PackageReference Include="Avalonia" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.6" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.6" />
   </ItemGroup>
   <ItemGroup>
     <None Update="cat.jpg">

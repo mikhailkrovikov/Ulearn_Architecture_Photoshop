@@ -1,3 +1,5 @@
+using MyPhotoshop.Filters.Parameters;
+
 namespace MyPhotoshop;
 
 public interface IFilter

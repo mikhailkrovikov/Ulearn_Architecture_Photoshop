@@ -1,4 +1,4 @@
-using MyPhotoshop.Filters;
+using MyPhotoshop.Filters.Parameters;
 
 namespace MyPhotoshop;
 

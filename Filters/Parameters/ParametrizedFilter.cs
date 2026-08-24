@@ -1,4 +1,4 @@
-﻿namespace MyPhotoshop.Filters
+﻿namespace MyPhotoshop.Filters.Parameters
 {
     public abstract class ParametrizedFilter<TParameters> : IFilter
         where TParameters : IParameters, new()

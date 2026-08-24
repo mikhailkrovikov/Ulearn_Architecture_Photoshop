@@ -1,6 +1,8 @@
-﻿using System.Drawing;
+﻿using MyPhotoshop.Filters.Parameters;
+using MyPhotoshop.Filters.Transform;
+using System.Drawing;
 
-namespace MyPhotoshop.Filters.Transform
+namespace MyPhotoshop.Filters
 {
     public class TrasnsformFilter<TParameters> : ParametrizedFilter<TParameters> where TParameters : IParameters, new()
     {

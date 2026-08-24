@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using MyPhotoshop.Filters.Parameters;
+using System.Drawing;
 
 namespace MyPhotoshop.Filters.Transform
 {
