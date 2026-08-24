@@ -3,17 +3,17 @@
     public abstract class ParametrizedFilter<TParameters> : IFilter
         where TParameters : IParameters, new()
     {
+        private readonly IParametersHandler<TParameters> handler = new SimpleParametersHandler<TParameters>();
 
         public ParameterInfo[] GetParameters()
         {
-            return new TParameters().GetDescription();
+            return handler.GetDescription();
         }
 
-        public Photo Process(Photo original, double[] parameters)
+        public Photo Process(Photo original, double[] values)
         {
-            var t = new TParameters();
-            t.SetValues(parameters);
-            return Process(original, t);
+            var parameters = handler.CreateParameters(values);
+            return Process(original, parameters);
         }
 
         public abstract Photo Process(Photo original, TParameters parameters);
